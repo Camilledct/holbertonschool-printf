@@ -7,40 +7,41 @@
  */
 int _printf(const char *format, ...)
 {
-    int count = 0, i;
-    va_list args;
-    specifier_t specifiers[] = {
-        {'c', print_char},
-        {'s', print_string},
-        {'%', print_percent},
-        {'\0', NULL} 
-    };
+int count = 0, i;
+va_list args;
+specifier_t specifiers[] = {
+{'c', print_char},
+{'s', print_string},
+{'%', print_percent},
+{'\0', NULL}
+};
 
-    if (!format)
-        return (-1);
+if (!format)
+return (-1);
 
-    va_start(args, format);
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            format++;
-            for (i = 0; specifiers[i].spec; i++)
-            {
-                if (*format == specifiers[i].spec)
-                {
-                    count += specifiers[i].f(args);
-                    break;
-                }
-            }
-            if (!specifiers[i].spec) 
-                return (-1);
-        }
-        else
-            count += _putchar(*format);
-        format++;
-    }
-    va_end(args);
-
-    return (count);
+va_start(args, format);
+while (*format)
+{
+if (*format == '%')
+{
+format++;
+for (i = 0; specifiers[i].spec; i++)
+{
+if (*format == specifiers[i].spec)
+{
+count += specifiers[i].f(args);
+break;
 }
+}
+if (!specifiers[i].spec)
+return (-1);
+}
+else
+count += _putchar(*format);
+format++;
+}
+va_end(args);
+
+return (count);
+}
+
