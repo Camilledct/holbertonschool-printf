@@ -18,8 +18,8 @@ int print_char(va_list args)
 int print_string(va_list args)
 {	char *str = va_arg(args, char *);
 	if (str == NULL)
-		return 0; /*  Don't print anything and return 0 printed characters */
-	return write(1, str, strlen(str)); /* Print the string and return the printed characters */
+		return (0); /*  Don't print anything and return 0 printed characters */
+	return (write(1, str, strlen(str)));
 }
 /**
  * print_percent - print a percent.
