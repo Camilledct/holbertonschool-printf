@@ -11,11 +11,11 @@ int _putchar(char c);
 
 typedef struct specifier
 {
-    char spec;                  /* Le caractère du spécificateur (ex: 'c', 's') */
-    int (*f)(va_list args);     /* Pointeur vers la fonction correspondante */
+    char spec;                  /* the specifier character (ex: 'c', 's') */
+    int (*f)(va_list args);     /* Pointer to function */
 } specifier_t;
 
-/* Fonctions pour chaque spécificateur */
+/* Functions for each specifiers */
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
