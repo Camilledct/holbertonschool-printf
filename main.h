@@ -4,15 +4,19 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+/**
+ * struct specifier - Structure associating a format specifier with a function
+ * @spec: The specifier character (e.g., 'c', 's', '%').
+ * @f: Pointer to a function that handles the specified format.
+ */
 typedef struct specifier
 {
-	char spec;                  /* the specifier character (ex: 'c', 's') */
-	int (*f)(va_list args);     /* Pointer to function */
+	char spec;
+	int (*f)(va_list args);
 } specifier_t;
 
 /* Functions for each specifiers */
