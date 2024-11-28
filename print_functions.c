@@ -46,50 +46,50 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
-*print_number - Imprime un entier signé.
-*@args: Liste d'arguments.
-*Return: Nombre de caractères imprimés.
-*/
+ *print_number - Print a signed int
+ *@args: List of arguments
+ *Return: Number of printed characters
+ */
 int print_number(va_list args)
 {
-    int num = va_arg(args, int);
-    char buffer[12];
-    int i = 0, count = 0;
-    int is_negative = 0;
+	int num = va_arg(args, int);
+	char buffer[12];
+	int i = 0, count = 0;
+	int is_negative = 0;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        return (1);
-    }
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
-    if (num < 0) 
-    {
-        is_negative = 1;
-        if (num == INT_MIN) 
-        {
-            num += 1;
-        }
-        num = -num;
-    }
+	if (num < 0)
+	{
+		is_negative = 1;
+		if (num == INT_MIN)
+		{
+			num += 1;
+		}
+		num = -num;
+	}
 
-    while (num > 0) 
-    {
-        buffer[i++] = (num % 10) + '0';
-        num /= 10;
-    }
+	while (num > 0)
+	{
+		buffer[i++] = (num % 10) + '0';
+		num /= 10;
+	}
 
-    if (is_negative)
-    {
-        _putchar('-');
-        count++;
-    }
+	if (is_negative)
+	{
+		_putchar('-');
+		count++;
+	}
 
-    while (--i >= 0)
-    {
-        _putchar(buffer[i]);
-        count++;
-    }
+	while (--i >= 0)
+	{
+		_putchar(buffer[i]);
+		count++;
+	}
 
-    return (count);
+	return (count);
 }
