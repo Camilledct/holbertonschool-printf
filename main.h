@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -23,5 +24,6 @@ typedef struct specifier
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
+int print_number(va_list args);
 
 #endif
