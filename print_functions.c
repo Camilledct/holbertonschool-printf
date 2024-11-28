@@ -16,10 +16,15 @@ int print_char(va_list args)
  * Return: Number of character print.
  */
 int print_string(va_list args)
-{	char *str = va_arg(args, char *);
-	if (str == NULL)
-		return (0); /*  Don't print anything and return 0 printed characters */
-	return (write(1, str, strlen(str)));
+{
+	char *str = va_arg(args, char *);
+	int count = 0;
+
+	if (!str)
+		str = "(null)";
+	while (*str)
+		count += _putchar(*str++);
+	return (count);
 }
 /**
  * print_percent - print a percent.
