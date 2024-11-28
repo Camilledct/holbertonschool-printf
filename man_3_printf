@@ -1,5 +1,5 @@
-.\" Manpage for Our _Printf Project.
-.\"
+.\" Man page for our _printf project.
+
 .TH man 1 "28/11/24" "1.0" "_printf project man page"
 .SH NAME
 _printf
@@ -39,7 +39,6 @@ _printf("String: %s", string);
 _printf("Integer: %d", integer); (or use "%i" for print integer, depends of the case).
 
 .SH SEE ALSO
-printf(1), _printf(2), printf(3), sprintf(), snprintf(), vsprintf(), vsnprintf().
 
 .SH BUGS
 If there is a bug, report to camilledct28@gmail.com and duquedylan@icloud.com.
