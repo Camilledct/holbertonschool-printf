@@ -12,10 +12,9 @@ We are Camille and Dylan, students of Holberton School
 ### Compilation
 
 ```
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c test/main.c
 ```
 
-### Commands 
 
 ### Requierements 
 
@@ -56,3 +55,6 @@ output : Hello World
 - i
 
 3- Create a man page for your function.
+
+
+Authors : Ducatte Camille and DUQUE Dylan
